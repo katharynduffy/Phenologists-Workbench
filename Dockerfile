@@ -1,1 +1,1 @@
-FROM rocker/geospatial
+FROM rocker/geospatial:3.5.2
