@@ -36,4 +36,4 @@ RUN chmod -R 777 /srv/shiny-server
 
 # Start the server with the container
 #CMD ["/usr/bin/shiny-server.sh"]
-CMD["docker run -p 3838:3838 -v /srv/shiny-server/:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ katharynduffy/phenosynth:1.0"]
+CMD docker run -p 3838:3838 -v /srv/shiny-server/:/srv/shiny-server/ -v /srv/shinylog/:/var/log/shiny-server/ katharynduffy/phenosynth:1.0
