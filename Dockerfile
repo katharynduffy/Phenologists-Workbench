@@ -18,7 +18,7 @@ RUN R -e "install.packages(c('curl', 'devtools', 'digest', 'dplyr', 'DT', \
     'shinyWidgets', 'shinyBS', 'sf', 'stringi', 'tidyr', \
     'units', 'yaml'), dependencies=TRUE)"
 
-RUN R -e "install.packages(c('shiny', 'rmarkdown','devtools'), repos='https://cloud.r-project.org/')" \
+RUN R -e "install.packages(c('rmarkdown','devtools'), repos='https://cloud.r-project.org/')" \
     -e "library(devtools)" \
     -e "install_github('usa-npn/rnpn')"
 
@@ -34,6 +34,8 @@ RUN cd /srv/shiny-server/ && \
 
 # change permission of the shiny folder where the app sits
 RUN chmod -R 777 /srv/shiny-server
+
+EXPOSE 3838
 
 # Start the server with the container
 CMD ["/usr/bin/shiny-server.sh"]
